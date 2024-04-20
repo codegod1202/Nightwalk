@@ -40,10 +40,11 @@ public class Enemy : MonoBehaviour
         CanSeePlayer();
         currentState = stateMachine.ToString();
         debugSphere.transform.position = lastKnowPos;
-        if(isGameOver) {
+        if (isGameOver)
+        {
             //display game over screen
             Destroy(gameObject);
-        }        
+        }
     }
     public bool CanSeePlayer()
     {
@@ -57,12 +58,12 @@ public class Enemy : MonoBehaviour
                 {
                     Ray ray = new Ray(transform.position + (Vector3.up * eyeHeight), targetDirection);
                     RaycastHit hitInfo = new RaycastHit();
-                    if (Physics.Raycast(ray, out hitInfo, sightDistance,mask))
+                    if (Physics.Raycast(ray, out hitInfo, sightDistance, mask))
                     {
                         //if (hitInfo.transform.gameObject == player)
-                       // {
-                            return true;
-                       // }
+                        // {
+                        return true;
+                        // }
                     }
                     Debug.DrawRay(ray.origin, ray.direction * sightDistance);
                 }
@@ -70,13 +71,16 @@ public class Enemy : MonoBehaviour
         }
         return false;
     }
-    public void takeDamage(float damageAmount) {
+    public void takeDamage(float damageAmount)
+    {
         Debug.Log("shot");
         enemyHP -= damageAmount;
         Debug.Log(enemyHP);
-        if(enemyHP <= 0) {
+        if (enemyHP <= 0)
+        {
             isGameOver = true;
+            player.GetComponent<EndManager>().enemyCount -= 1;
             Destroy(gameObject);
         }
-    }    
+    }
 }
