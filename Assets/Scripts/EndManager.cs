@@ -8,7 +8,7 @@ public class EndManager : MonoBehaviour
     [SerializeField]
     public float playerHP = 100f;
     [SerializeField]
-    public int enemyCount = 1;
+    public int enemyCount = 5;
     [SerializeField]
     public TextMeshProUGUI text;
     private float delay = 3f; // The delay in seconds
