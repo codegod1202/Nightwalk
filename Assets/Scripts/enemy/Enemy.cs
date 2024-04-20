@@ -16,11 +16,13 @@ public class Enemy : MonoBehaviour
     private GameObject player;
     private Vector3 lastKnowPos;
     public Vector3 LastKnowPos { get => lastKnowPos; set => lastKnowPos = value; }
+    public float enemyHP = 100;
     public float sightDistance = 20f;
     public float fieldOfView = 85f;
     public float eyeHeight;
     [SerializeField]
     public LayerMask mask;
+    public static bool isGameOver;
     public GameObject Player { get => player; }
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         stateMachine.Initialise();
         player = GameObject.FindGameObjectWithTag("Player");
+        isGameOver = false;
     }
 
     // Update is called once per frame
@@ -37,6 +40,10 @@ public class Enemy : MonoBehaviour
         CanSeePlayer();
         currentState = stateMachine.ToString();
         debugSphere.transform.position = lastKnowPos;
+        if(isGameOver) {
+            //display game over screen
+            Destroy(gameObject);
+        }        
     }
     public bool CanSeePlayer()
     {
@@ -63,4 +70,13 @@ public class Enemy : MonoBehaviour
         }
         return false;
     }
+    public void takeDamage(float damageAmount) {
+        Debug.Log("shot");
+        enemyHP -= damageAmount;
+        Debug.Log(enemyHP);
+        if(enemyHP <= 0) {
+            isGameOver = true;
+            Destroy(gameObject);
+        }
+    }    
 }
