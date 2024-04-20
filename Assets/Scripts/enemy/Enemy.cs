@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -80,6 +77,9 @@ public class Enemy : MonoBehaviour
         {
             player.GetComponent<EndManager>().enemyCount -= 1;
             Destroy(gameObject);
+            if(player.GetComponent<EndManager>().enemyCount <= 0) {
+                isGameOver = true;
+            }
         }
     }
 }
