@@ -78,9 +78,11 @@ public class Enemy : MonoBehaviour
         Debug.Log(enemyHP);
         if (enemyHP <= 0)
         {
-            isGameOver = true;
             player.GetComponent<EndManager>().enemyCount -= 1;
             Destroy(gameObject);
+            if(player.GetComponent<EndManager>().enemyCount <= 0) {
+                isGameOver = true;
+            }
         }
     }
 }
