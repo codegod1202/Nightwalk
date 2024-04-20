@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseState : MonoBehaviour
+public abstract class BaseState
 {
     // Start is called before the first frame update
     public Enemy enemy;
