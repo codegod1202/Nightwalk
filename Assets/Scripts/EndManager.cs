@@ -24,6 +24,11 @@ public class EndManager : MonoBehaviour
         if (playerHP <= 0)
         {
             text.text = "You died";
+            timer += Time.deltaTime;
+            if (timer >= delay)
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
             Debug.Log("You died");
         }
         if (enemyCount <= 0)
