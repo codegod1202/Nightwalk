@@ -13,4 +13,19 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Player has quit the game");
     }
 
+    void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            Debug.Log("Player has quit the game");
+        }
+    }
+
 }
