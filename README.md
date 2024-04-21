@@ -21,7 +21,7 @@
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white) ![Unity](https://img.shields.io/badge/Unity-F80000?style=for-the-badge&logo=unity&logoColor=white) ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 
 ## Challenges faced :
-Tuning audio with the player's action and then adding so many variety of sounds to make the user's experience realistic was tough for us.
+Tuning audio with the player's action and adding variety of sounds to make the user's experience realistic was tough for us.
 
 
 ## Details :
