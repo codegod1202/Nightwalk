@@ -12,7 +12,7 @@
   <a href="https://youtu.be/dQw4w9WgXcQ">https://youtu.be/dQw4w9WgXcQ</a>
   
 ## Presentation Link:
-  <a href="https://bit.ly/hack36_24_ppt"> PPT link here </a>
+  <a href="https://www.canva.com/design/DAGDAbrNxQs/Tb8NKZOA0W6XmbBI98LZbg/view?utm_content=DAGDAbrNxQs&utm_campaign=designshare&utm_medium=link&utm_source=editor"> PPT link here </a>
   
   
 ## Table of Contents:
