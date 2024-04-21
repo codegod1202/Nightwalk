@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     public LayerMask mask;
     public static bool isGameOver;
     public GameObject Player { get => player; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,8 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         isGameOver = false;
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -75,6 +78,7 @@ public class Enemy : MonoBehaviour
         Debug.Log(enemyHP);
         if (enemyHP <= 0)
         {
+            AudioManager.instance.Play("Score");
             player.GetComponent<EndManager>().enemyCount -= 1;
             Destroy(gameObject);
             if(player.GetComponent<EndManager>().enemyCount <= 0) {

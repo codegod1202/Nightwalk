@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 public class EndManager : MonoBehaviour
 {
     [SerializeField]
@@ -9,8 +10,6 @@ public class EndManager : MonoBehaviour
     public int enemyCount = 5;
     [SerializeField]
     public TextMeshProUGUI text;
-    private float delay = 3f; // The delay in seconds
-    private float timer = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,22 +21,28 @@ public class EndManager : MonoBehaviour
         if (playerHP <= 0)
         {
             text.text = "You died";
-            timer += Time.deltaTime;
-            if (timer >= delay)
-            {
-                SceneManager.LoadScene("MainMenu");
-            }
-            Debug.Log("You died");
+            AudioManager.instance.Play("YouDied");
+            Debug.Log("You died");            
+             Debug.Log(Time.time);
+            //StartCoroutine(Delay());
+
         }
-        if (enemyCount <= 0)
+        else if (enemyCount <= 0)
         {
             text.text = "You Won";
-            timer += Time.deltaTime;
-            if (timer >= delay)
-            {
-                SceneManager.LoadScene("MainMenu");
-            }
+            AudioManager.instance.Play("YouWon");
             Debug.Log("You Won");
+            Debug.Log(Time.time);
+            //StartCoroutine(Delay());   
+
         }
+    }
+
+    IEnumerator Delay() {
+        //Debug.Log(Time.time);
+        yield return new WaitForSeconds(5);
+        //Debug.Log(Time.time);
+        Debug.Log(Time.time);
+        SceneManager.LoadScene("MainMenu");                    
     }
 }
