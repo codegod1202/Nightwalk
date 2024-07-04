@@ -32,11 +32,10 @@ Implemented a 3D audio-based game using Unity Engine. Night Walker is built from
 
 Team Name: GaltiKrdiAakr
 
+* [Sarthak Aggarwal](https://github.com/codegod1202)
 * [Siddhant Bhardwaj](https://github.com/Sidop234)
 * [Akshat Kumar Singh](https://github.com/akshatkrsing)
-* [Sarthak Aggarwal](https://github.com/codegod1202)
 * [Aditya Maurya](https://github.com/Adi-462)
-
 
 ### Made at:
 <a href="https://hack36.com"> <img src="https://i.postimg.cc/FFwvfkGk/built-at-hack36.png" height=24px> </a>
